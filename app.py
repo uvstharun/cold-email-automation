@@ -1,5 +1,10 @@
 import streamlit as st
+import sys
+import os
+
+sys.path.append(os.path.dirname(__file__))  # Ensure the app finds the module
 from email_sender import send_bulk_emails
+
 
 st.title("Cold Email Automation Tool")
 
