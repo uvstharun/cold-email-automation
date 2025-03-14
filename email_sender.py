@@ -1,6 +1,13 @@
 import smtplib
 from email.mime.text import MIMEText
-import gspread
+import subprocess
+import sys
+
+try:
+    import gspread
+except ModuleNotFoundError:
+    subprocess.run([sys.executable, "-m", "pip", "install", "gspread"])
+    import gspread  # Retry import
 from oauth2client.service_account import ServiceAccountCredentials
 import json
 import streamlit as st
