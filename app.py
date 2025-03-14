@@ -1,5 +1,10 @@
 import streamlit as st
-from email_sender import send_bulk_emails  # Import directly
+from email_sender import send_bulk_emails  
+import streamlit as st
+import subprocess
+
+installed_packages = subprocess.run(["pip", "freeze"], capture_output=True, text=True)
+st.text(installed_packages.stdout)
 
 st.title("Cold Email Automation Tool")
 
